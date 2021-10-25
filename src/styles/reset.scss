@@ -1,0 +1,57 @@
+////////////////////////////////
+// General Reset
+////////////////////////////////
+
+// Box Sizing
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// Reset Margins
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+  margin: 0;
+}
+
+// Body height, default line height
+body {
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+// Images = block elements
+img,
+picture {
+  display: block;
+  max-width: 100%;
+}
+
+// Form resets
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+// Reduced motion
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
