@@ -1,0 +1,17 @@
+/////////////////////////
+// Blocks
+/////////////////////////
+
+.numbered-title {
+  font-size: var(--fs-500);
+  font-family: var(--ff-sans-cond);
+
+  text-transform: uppercase;
+  letter-spacing: 4.72px;
+
+  span {
+    margin-right: 0.5em;
+    font-weight: 700;
+    color: hsl(var(--clr-white) / 0.25);
+  }
+}
