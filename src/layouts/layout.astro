@@ -1,4 +1,6 @@
 ---
+import Nav from "../components/Nav.astro";
+
 export interface Props {
   title?: string;
 };
@@ -29,7 +31,8 @@ if (title) {
   <title>{headerTitle}</title>
 </head>
 <body>
-
+  <Nav />
+  
   <slot />
 
 </body>

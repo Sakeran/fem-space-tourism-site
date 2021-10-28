@@ -1,0 +1,12 @@
+---
+const route = Astro.request.url.pathname;
+---
+
+<nav class="container text-white">
+  <ul class="primary-navigation underline-indicators flex">
+    <li class={route == "/" ? 'active' : ''}><a class="uppercase text-white ff-sans-cond letter-spacing-2" href="/"><span>00</span> Home</a></li>
+    <li class={route == "/destination" ? 'active' : ''}><a class="uppercase text-white ff-sans-cond letter-spacing-2" href="/destination"><span>01</span> Destination</a></li>
+    <li class={route == "/crew" ? 'active' : ''}><a class="uppercase text-white ff-sans-cond letter-spacing-2" href="/crew"><span>02</span> Crew</a></li>
+    <li class={route == "/technology" ? 'active' : ''}><a class="uppercase text-white ff-sans-cond letter-spacing-2" href="/technology"><span>02</span> Technology</a></li>
+  </ul>
+</nav>
