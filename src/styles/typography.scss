@@ -1,0 +1,50 @@
+////////////////////////////////
+// Typography
+////////////////////////////////
+
+// Font Families
+
+.ff-serif {
+  font-family: var(--ff-serif);
+}
+
+.ff-sans-cond {
+  font-family: var(--ff-sans-cond);
+}
+
+.ff-sans-normal {
+  font-family: var(--ff-sans-normal);
+}
+
+// Letter Spacing
+
+.letter-spacing-1 {
+  letter-spacing: 4.75px;
+}
+
+.letter-spacing-2 {
+  letter-spacing: 2.7px;
+}
+
+.letter-spacing-3 {
+  letter-spacing: 2.35px;
+}
+
+// Font sizes 200-900
+@for $i from 2 through 9 {
+  .fs-#{$i}00 {
+    font-size: var(--fs-#{$i}00);
+
+    // Smaller line heights for 600-900
+    @if $i >= 6 {
+      line-height: 1.1;
+    }
+  }
+
+}
+
+// Misc
+
+.uppercase {
+  text-transform: uppercase;
+}
