@@ -78,6 +78,38 @@ body {
   }
 }
 
+.logo {
+  position: relative;
+  margin: 1.5rem clamp(1.5rem, 5vw, 3.5rem);
+}
+
+.primary-header {
+  justify-content: space-between;
+  align-items: center;
+
+  @media screen and (min-width: 45em) {
+    &::after {
+      content: "";
+      display: block;
+      position: relative;
+
+      height: 1px;
+      background-color: hsl(var(--clr-light) / 0.25);
+
+      z-index: 1;
+      min-width: 4rem;
+      flex-grow: 8;
+      order: 1;
+      margin-right: -2.5rem;
+    }
+
+    & > nav {
+      order: 2;
+      flex-grow: 1;
+    }
+  }
+}
+
 .mobile-nav-toggle {
   display: none;
 
@@ -113,7 +145,7 @@ body {
 }
 
 .primary-navigation {
-  --gap: 8rem;
+  --gap: clamp(2rem, 5vw, 3.5rem);
   --underline-gap: 2rem;
 
   list-style: none;
@@ -156,12 +188,29 @@ body {
     }
   }
 
+  // Tablet Nav Styles
+  @media (min-width: 35em) and (max-width: 44.999em) {
+    padding-inline: 3rem;
+  }
+  
+  // Desktop Nav Styles
+  @media screen and (min-width: 45rem) {
+    margin-block: 2.5rem;
+    padding-inline: clamp(3rem, 10vw, 7.75rem);
+  }
+
+  // Nav Links
   a {
     text-decoration: none;
 
     & > span {
       font-weight: 700;
       margin-right: 0.5em;
+
+      // Hide numbers on tablet
+      @media screen and (min-width: 35em) and (max-width: 44.999em) {
+        display: none;
+      }
     }
   }
 }
