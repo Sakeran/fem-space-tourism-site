@@ -14,6 +14,10 @@
   gap: var(--gap, 1rem);
 }
 
+.d-block {
+  display: block;
+}
+
 .flow > *:where(:not(:first-child)) {
   margin-top: var(--flow-space, 1rem);
 }
@@ -23,6 +27,25 @@
   margin-inline: auto;
 
   max-width: 80rem;
+}
+
+.grid-container {
+  display: grid;
+  column-gap: var(--container-gap, 2rem);
+  
+  @media screen and (min-width: 45em) {
+    grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 40rem)) minmax(2rem, 1fr);
+    place-items: center;
+
+    & > *:first-child {
+      grid-column: 2;
+    }
+  
+    & > *:last-child {
+      grid-column: 3;
+    }
+  }
+
 }
 
 .sr-only {
