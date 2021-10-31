@@ -17,19 +17,19 @@ const linkClasses = "uppercase text-white ff-sans-cond letter-spacing-2";
     <ul id="primary-navigation" class="primary-navigation underline-indicators flex" data-visible="false">
 
       <li class={route == "/" && 'active'}>
-        <a class={linkClasses} href="/"><span>00</span> Home</a>
+        <a class={linkClasses} href="/"><span aria-hidden="true">00</span> Home</a>
       </li>
 
       <li class={route == "/destination" && 'active'}>
-        <a class={linkClasses} href="/destination"><span>01</span> Destination</a>
+        <a class={linkClasses} href="/destination"><span aria-hidden="true">01</span> Destination</a>
       </li>
 
       <li class={route == "/crew" && 'active'}>
-        <a class={linkClasses} href="/crew"><span>02</span> Crew</a>
+        <a class={linkClasses} href="/crew"><span aria-hidden="true">02</span> Crew</a>
       </li>
 
       <li class={route == "/technology" && 'active'}>
-        <a class={linkClasses} href="/technology"><span>03</span> Technology</a>
+        <a class={linkClasses} href="/technology"><span aria-hidden="true">03</span> Technology</a>
       </li>
     </ul>
   </nav>

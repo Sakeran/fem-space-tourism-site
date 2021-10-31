@@ -17,6 +17,31 @@ if (title) {
 const route = Astro.request.url.pathname.slice(1) || "home";
 ---
 
+<style lang="scss">
+  .skip-links {
+    position: absolute;
+    top: 0;
+    width: max-content;
+    z-index: 9999;
+
+    padding: 0.5rem 2.5rem;
+
+    background-color: hsl(var(--clr-white));
+    
+    transform: translateY(-100%);
+    transition: transform 0.15s ease-in-out;
+
+    &:focus-within {
+      transform: translateY(0);
+    }
+
+    a {
+      color: hsl(var(--clr-dark));
+      text-decoration: none;
+    }
+  }
+</style>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,9 +58,14 @@ const route = Astro.request.url.pathname.slice(1) || "home";
   <title>{headerTitle}</title>
 </head>
 <body class={route}>
+
+  <div class="skip-links">
+    <a href="#main">Skip to content</a>
+  </div>
+
   <Nav />
 
-  <main class="grid">
+  <main id="main" class="grid">
     <slot />
   </main>
 
