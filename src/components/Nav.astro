@@ -9,8 +9,12 @@ const linkClasses = "uppercase text-white ff-sans-cond letter-spacing-2";
     <img class="logo" src="/assets/shared/logo.svg" alt="space tourism logo">
   </div>
 
+  <button id="mobile-nav-toggle" class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+    <span class="sr-only">Menu</span>
+  </button>
+
   <nav class="container text-white">
-    <ul class="primary-navigation underline-indicators flex">
+    <ul id="primary-navigation" class="primary-navigation underline-indicators flex" data-visible="false">
 
       <li class={route == "/" && 'active'}>
         <a class={linkClasses} href="/"><span>00</span> Home</a>
@@ -30,3 +34,13 @@ const linkClasses = "uppercase text-white ff-sans-cond letter-spacing-2";
     </ul>
   </nav>
 </div>
+
+<script hoist>
+  const toggle = document.getElementById("mobile-nav-toggle");
+  const nav = document.getElementById("primary-navigation");
+
+  toggle.addEventListener("click", () => {
+    toggle.setAttribute("aria-expanded", toggle.getAttribute("aria-expanded") === "false");
+    nav.setAttribute("data-visible", nav.getAttribute("data-visible") === "false");
+  });
+</script>
