@@ -3,16 +3,23 @@ import Layout from "../layouts/layout.astro";
 ---
 
 <Layout>
-  00 Home
-  01 Destination
-  02 Crew
-  03 Technology
+  <div class="grid-container grid-container--home">
 
-  So, you want to travel to
-  Space
-  Let’s face it; if you want to go to space, you might as well genuinely go to 
-  outer space and not hover kind of on the edge of it. Well sit back, and relax 
-  because we’ll give you a truly out of this world experience!
+    <div>
+      <h1 class="uppercase text-accent fs-500 letter-spacing-1">
+        So, you want to travel to
+        <span class="text-white fs-900 ff-serif d-block">Space</span>
+      </h1>
+      <p class="text-accent">
+        Let’s face it; if you want to go to space, you might as well genuinely go to
+        outer space and not hover kind of on the edge of it. Well sit back, and relax
+        because we’ll give you a truly out of this world experience!
+      </p>
+    </div>
 
-  Explore
+    <div>
+      <a class="large-button uppercase ff-serif text-dark bg-white" href="#">Explore</a>
+    </div>
+
+  </div>
 </Layout>

@@ -18,6 +18,26 @@
   }
 }
 
+// Pages
+
+body {
+  background-size: cover;
+  background-position: bottom center;
+}
+
+.home {
+  background-image: url("/assets/home/background-home-mobile.jpg");
+  
+  @media screen and (min-width: 35em) {
+    background-position: center center;
+    background-image: url("/assets/home/background-home-tablet.jpg");
+  }
+
+  @media screen and (min-width: 45em) {
+    background-image: url("/assets/home/background-home-desktop.jpg");
+  }
+}
+
 // Components
 
 .large-button {

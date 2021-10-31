@@ -35,7 +35,7 @@ const route = Astro.request.url.pathname.slice(1) || "home";
 <body class={route}>
   <Nav />
 
-  <main>
+  <main class="grid">
     <slot />
   </main>
 
