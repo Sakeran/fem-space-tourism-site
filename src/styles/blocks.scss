@@ -261,9 +261,10 @@ body {
 
 .tab-list {
   --gap: 2.25rem;
-  --underline-gap: 0.75rem;
+  --underline-gap: 0.5rem;
 
   & > button {
+    background-color: transparent;
     cursor: pointer;
 
     &[aria-selected="true"] {
