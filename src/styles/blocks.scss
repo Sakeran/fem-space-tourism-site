@@ -263,8 +263,9 @@ body {
   --gap: 2.25rem;
   --underline-gap: 0.5rem;
 
-  & > button {
+  & > * {
     background-color: transparent;
+    text-decoration: none;
     cursor: pointer;
 
     &[aria-selected="true"] {
