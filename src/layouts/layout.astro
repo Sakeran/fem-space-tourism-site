@@ -3,9 +3,10 @@ import Nav from "../components/Nav.astro";
 
 export interface Props {
   title?: string;
+  bodyClass?: string;
 };
 
-const { title } = Astro.props;
+const { title, bodyClass } = Astro.props;
 
 let headerTitle;
 if (title) {
@@ -57,7 +58,7 @@ const route = Astro.request.url.pathname.slice(1) || "home";
     
   <title>{headerTitle}</title>
 </head>
-<body class={route}>
+<body class={bodyClass}>
 
   <div class="skip-links">
     <a href="#main">Skip to content</a>
