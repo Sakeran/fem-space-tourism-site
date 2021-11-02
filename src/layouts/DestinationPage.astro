@@ -1,0 +1,56 @@
+---
+export interface Props {
+  destination: object;
+};
+
+import Layout from "../layouts/layout.astro";
+import Picture from "../components/Image.astro";
+
+import data from "../data.json";
+
+const destination = Astro.props.destination;
+
+---
+
+<Layout title="Destination">
+  <div class="grid-container grid-container--destination flow">
+
+    <h1 class="numbered-title"><span aria-hidden="true">01</span> Pick your destination</h1>
+
+    <Picture images={destination.images as any} alt={destination.name as any}/>
+
+    <div class="tab-list underline-indicators flex">
+      {data.destinations.map(dest => (
+        <a
+          href={'/dest/' + dest.name.toLowerCase()}
+          aria-selected={dest.name == destination.name ? "true" : "false"}
+          class="uppercase ff-sans-cond fs-300 text-accent letter-spacing-2">
+          {dest.name}
+        </a>
+      ))}
+    </div>
+
+    <article class="destination-info flow">
+      <h2 class="fs-800 ff-serif uppercase">{destination.name}</h2>
+      
+      <p>
+        {destination.description}
+      </p>
+
+      <div class="destination-meta flex">
+
+        <div class="flow" style="--flow-space: 0.75rem">
+          <h3 class="fs-300 text-accent ff-sans-cond uppercase letter-spacing-3">Avg. Distance</h3>
+          <p class="uppercase ff-serif">{destination.distance}</p>
+        </div>
+
+        <div class="flow" style="--flow-space: 0.75rem">
+          <h3 class="fs-300 text-accent ff-sans-cond uppercase letter-spacing-3">Est. Travel Time</h3>
+          <p class="uppercase ff-serif">{destination.travel}</p>
+        </div>
+
+      </div>
+
+    </article>
+  </div>
+</Layout>

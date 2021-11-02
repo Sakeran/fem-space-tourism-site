@@ -1,0 +1,10 @@
+---
+import DestinationPage from "../../layouts/DestinationPage.astro";
+
+import data from "../../data.json";
+
+// Use Moon as the default destination
+const destination = data.destinations[0];
+---
+
+<DestinationPage destination={destination} />

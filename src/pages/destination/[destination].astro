@@ -1,0 +1,17 @@
+---
+import DestinationPage from "../../layouts/DestinationPage.astro";
+
+import data from "../../data.json";
+
+export async function getStaticPaths() {
+  return data.destinations.map(dest => ({
+    params: {destination: dest.name.toLowerCase()},
+    props: {destination: dest}
+  }));
+}
+
+
+const destination = Astro.props.destination;
+---
+
+<DestinationPage destination={destination} />
