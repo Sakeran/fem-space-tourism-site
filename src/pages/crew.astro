@@ -1,18 +1,31 @@
 ---
 import Layout from "../layouts/layout.astro";
+import data from "../data.json";
+
+const member = data.crew[0];
 ---
 
 <Layout title="Crew">
-  00 Home
-  01 Destination
-  02 Crew
-  03 Technology
 
-  So, you want to travel to
-  Space
-  Let’s face it; if you want to go to space, you might as well genuinely go to 
-  outer space and not hover kind of on the edge of it. Well sit back, and relax 
-  because we’ll give you a truly out of this world experience!
+  <div class="grid-container grid-container--crew flow">
+    <h1 class="numbered-title"><span aria-hidden="true">02</span>  Meet your crew</h1>
 
-  Explore
+    <div class="dot-indicators flex">
+      <button aria-selected="true" class=""><span class="sr-only">The commander</span></button>
+      <button aria-selected="false" class=""><span class="sr-only">The mission specialist</span></button>
+      <button aria-selected="false" class=""><span class="sr-only">The pilot</span></button>
+      <button aria-selected="false" class=""><span class="sr-only">The crew engineer</span></button>
+    </div>
+
+    <article class="crew-details flow">
+      <h2 class="ff-600 ff-serif uppercase">{member.role}</h2>
+      <p class="ff-serif uppercase fs-700">{member.name}</p>
+      <p class="text-accent">{member.bio}</p>
+    </article>
+
+    <img src={member.images.png} alt={member.name}>
+
+  </div>
+  
+
 </Layout>

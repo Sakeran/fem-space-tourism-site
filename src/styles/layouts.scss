@@ -19,12 +19,18 @@
   padding-inline: 1rem;
   padding-bottom: 4rem;
 
-  p:not([class]) {
+  p {
     max-width: 50ch;
   }
 
   .numbered-title {
     grid-area: title;
+    margin-bottom: 2rem;
+
+    @media screen and (min-width: 35em) {
+      justify-self: start;
+      margin-top: 2rem;
+    }
   }
 
   @media screen and (min-width: 45em) {
@@ -92,22 +98,14 @@
 
       @media screen and (min-width: 35em) {
         --gap: 3.5rem;
-        
+
         flex-direction: row;
         justify-content: space-evenly;
       }
-      
+
       @media screen and (min-width: 45em) {
         --gap: min(6vw, 6rem);
         justify-content: flex-start;
-      }
-    }
-
-    // Mobile View
-    @media screen and (min-width: 35em) {
-      .numbered-title {
-        justify-self: start;
-        margin-top: 2rem;
       }
     }
 
@@ -123,6 +121,68 @@
 
       & > img {
         max-width: 90%;
+      }
+    }
+  }
+
+  // Crew Page Layout
+  &--crew {
+    --flow-space: 2rem;
+
+    grid-template-areas:
+      "title"
+      "image"
+      "dots"
+      "content";
+
+    & > img {
+      grid-area: image;
+      align-self: end;
+
+      border-bottom: 1px solid hsl(var(--clr-white) / 0.25);
+      max-width: 80%;
+    }
+
+    & > .dot-indicators {
+      grid-area: dots;
+    }
+
+    & > .crew-details {
+      --flow-space: 1rem;
+      grid-area: content;
+
+      h2 {
+        color: hsl(var(--clr-white) / 0.5);
+        & + p {
+          margin-top: 0.5rem;
+        }
+      }
+    }
+
+    @media screen and (min-width: 35em) {
+      padding-bottom: 0;
+      
+      grid-template-areas:
+        "title"
+        "content"
+        "dots"
+        "image";
+    }
+
+    @media screen and (min-width: 45em) {
+      grid-template-areas:
+        " . title title ."
+        " . content image ."
+        " . dots image .";
+
+      justify-items: start;
+
+      & > img {
+        max-width: 100%;
+      }
+
+      & > .crew-details {
+        align-self: center;
       }
     }
   }
