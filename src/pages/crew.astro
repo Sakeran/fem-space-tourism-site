@@ -23,7 +23,10 @@ const member = data.crew[0];
       <p class="text-accent">{member.bio}</p>
     </article>
 
-    <img src={member.images.png} alt={member.name}>
+    <picture>
+      <source srcset={member.images.webp} type="image/webp">
+      <img src={member.images.png} alt={member.name}>
+    </picture>
 
   </div>
   
