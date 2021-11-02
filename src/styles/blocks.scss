@@ -38,6 +38,19 @@ body {
   }
 }
 
+.destination {
+  background-image: url("/assets/destination/background-destination-mobile.jpg");
+
+  @media screen and (min-width: 35em) {
+    background-position: center center;
+    background-image: url("/assets/destination/background-destination-tablet.jpg");
+  }
+
+  @media screen and (min-width: 45em) {
+    background-image: url("/assets/destination/background-destination-desktop.jpg");
+  }
+}
+
 // Components
 
 .large-button {
