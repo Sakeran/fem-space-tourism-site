@@ -71,6 +71,7 @@
       "content";
 
     & > picture {
+      align-self: start;
       grid-area: image;
       max-width: 60%;
     }
@@ -173,6 +174,10 @@
     }
 
     @media screen and (min-width: 45em) {
+      grid-template-columns: minmax(2rem, 1fr) minmax(0, 40rem) minmax(0, 20rem) minmax(
+        2rem,
+        1fr
+      );
       grid-template-areas:
         " . title title ."
         " . content image ."
@@ -181,7 +186,8 @@
       justify-items: start;
 
       & > picture {
-        max-width: 100%;
+        grid-column: span 2;
+        max-width: 90%;
       }
 
       & > .crew-details {
