@@ -1,9 +1,12 @@
 ---
+export interface Props {
+  tech: object;
+};
+  
 import Layout from "../layouts/layout.astro";
-
 import data from "../data.json";
 
-const tech = data.technology[0];
+const tech = Astro.props.tech;
 ---
 
 <Layout title="Technology" bodyClass="technology">
@@ -11,9 +14,13 @@ const tech = data.technology[0];
     <h1 class="numbered-title"><span>03</span> Space Launch 101</h1>
 
     <nav class="numbered-indicators flex">
-      <button aria-selected="true" class="fs-600 ff-serif text-white">1</button>
-      <button aria-selected="false" class="fs-600 ff-serif text-white">2</button>
-      <button aria-selected="false" class="fs-600 ff-serif text-white">3</button>
+      {data.technology.map((t, i) => (
+        <a
+          href={'/technology/' + t.name.toLowerCase().replace(" ", "-")}
+          aria-current={t.name == tech.name ? "page" : null}
+          class="fs-600 ff-serif text-white">
+          {i + 1}</a>
+      ))}
     </nav>
 
     <article class="technology-details flow">

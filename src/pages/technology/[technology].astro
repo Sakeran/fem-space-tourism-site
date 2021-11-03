@@ -1,0 +1,17 @@
+---
+import TechnologyPage from "../../layouts/TechnologyPage.astro";
+
+import data from "../../data.json";
+
+export async function getStaticPaths() {
+  return data.technology.map(t => ({
+    params: {technology: t.name.toLowerCase().replace(" ", "-")},
+    props: {tech: t}
+  }));
+}
+
+
+const tech = Astro.props.tech;
+---
+
+<TechnologyPage tech={tech} />

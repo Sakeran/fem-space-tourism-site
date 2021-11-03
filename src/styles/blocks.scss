@@ -332,6 +332,7 @@ body {
     background: hsl(var(--clr-dark));
 
     cursor: pointer;
+    text-decoration: none;
 
     transition: border-color 0.25s ease-in-out;
 
@@ -340,7 +341,8 @@ body {
       border-color: hsl(var(--clr-white));
     }
 
-    &[aria-selected="true"] {
+    &[aria-selected="true"],
+    &[aria-current="page"] {
       color: hsl(var(--clr-dark));
       background-color: hsl(var(--clr-white));
     }

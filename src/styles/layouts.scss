@@ -252,6 +252,8 @@
     
       // Desktop View
       @media screen and (min-width: 45em) {
+        --numbered-gap: 2rem;
+
         grid-template-columns:
           minmax(2rem, 1fr)
           minmax(0, 10rem)

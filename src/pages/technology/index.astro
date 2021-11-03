@@ -1,0 +1,9 @@
+---
+import TechnologyPage from "../../layouts/TechnologyPage.astro";
+import data from "../../data.json";
+
+// Default to Launch Vehicle
+const tech = data.technology[0];
+---
+
+<TechnologyPage tech={tech} />
