@@ -253,7 +253,8 @@ body {
     }
 
     &.active,
-    &[aria-selected="true"] {
+    &[aria-selected="true"],
+    &[aria-current="page"] {
       border-bottom-color: hsl(var(--clr-white));
     }
   }
@@ -268,7 +269,8 @@ body {
     text-decoration: none;
     cursor: pointer;
 
-    &[aria-selected="true"] {
+    &[aria-selected="true"],
+    &[aria-current="page"] {
       color: hsl(var(--clr-white));
     }
   }
@@ -293,7 +295,8 @@ body {
       background-color: hsl(var(--clr-white) / 0.5);
     }
 
-    &[aria-selected="true"] {
+    &[aria-selected="true"],
+    &[aria-current="page"] {
       background-color: hsl(var(--clr-white));
     }
   }

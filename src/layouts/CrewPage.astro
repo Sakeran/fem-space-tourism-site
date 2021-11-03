@@ -18,7 +18,7 @@ const member = Astro.props.member;
       {data.crew.map(m => (
         <a 
          href={`/crew/${m.name.toLowerCase().replace(' ', '-')}`}
-         aria-selected={m.name == member.name ? "true" : "false"}>
+         aria-current={m.name == member.name ? "page" : null}>
           <span class="sr-only">{m.role}</span>
         </a>
       ))}

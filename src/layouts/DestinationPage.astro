@@ -19,16 +19,16 @@ const destination = Astro.props.destination;
 
     <Picture images={destination.images as any} alt={destination.name as any}/>
 
-    <div class="tab-list underline-indicators flex">
+    <nav class="tab-list underline-indicators flex">
       {data.destinations.map(dest => (
         <a
           href={'/destination/' + dest.name.toLowerCase()}
-          aria-selected={dest.name == destination.name ? "true" : "false"}
+          aria-current={dest.name == destination.name ? "page" : null}
           class="uppercase ff-sans-cond fs-300 text-accent letter-spacing-2">
           {dest.name}
         </a>
       ))}
-    </div>
+    </nav>
 
     <article class="destination-info flow">
       <h2 class="fs-800 ff-serif uppercase">{destination.name}</h2>
