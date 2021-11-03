@@ -1,0 +1,11 @@
+---
+import CrewPage from "../../layouts/CrewPage.astro";
+
+import data from "../../data.json";
+
+// Default to Commander
+const member = data.crew[0];
+---
+
+<CrewPage member={member} />
+

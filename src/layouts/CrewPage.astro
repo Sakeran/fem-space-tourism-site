@@ -1,8 +1,12 @@
 ---
+export interface Props {
+  member: object;
+};
+  
 import Layout from "../layouts/layout.astro";
 import data from "../data.json";
 
-const member = data.crew[0];
+const member = Astro.props.member;
 ---
 
 <Layout title="Crew" bodyClass="crew">
@@ -10,12 +14,15 @@ const member = data.crew[0];
   <div class="grid-container grid-container--crew flow">
     <h1 class="numbered-title"><span aria-hidden="true">02</span>  Meet your crew</h1>
 
-    <div class="dot-indicators flex">
-      <button aria-selected="true" class=""><span class="sr-only">The commander</span></button>
-      <button aria-selected="false" class=""><span class="sr-only">The mission specialist</span></button>
-      <button aria-selected="false" class=""><span class="sr-only">The pilot</span></button>
-      <button aria-selected="false" class=""><span class="sr-only">The crew engineer</span></button>
-    </div>
+    <nav class="dot-indicators flex">
+      {data.crew.map(m => (
+        <a 
+         href={`/crew/${m.name.toLowerCase().replace(' ', '-')}`}
+         aria-selected={m.name == member.name ? "true" : "false"}>
+          <span class="sr-only">{m.role}</span>
+        </a>
+      ))}
+    </nav>
 
     <article class="crew-details flow">
       <h2 class="ff-600 ff-serif uppercase">{member.role}</h2>

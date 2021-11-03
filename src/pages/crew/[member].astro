@@ -1,0 +1,17 @@
+---
+import CrewPage from "../../layouts/CrewPage.astro";
+
+import data from "../../data.json";
+
+export async function getStaticPaths() {
+  return data.crew.map(m => ({
+    params: {member: m.name.toLowerCase().replace(" ", "-")},
+    props: {member: m}
+  }));
+}
+
+const member = Astro.props.member;
+---
+
+<CrewPage member={member} />
+
