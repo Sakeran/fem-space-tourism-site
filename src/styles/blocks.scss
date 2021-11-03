@@ -64,6 +64,19 @@ body {
   }
 }
 
+.technology {
+  background-image: url("/assets/technology/background-technology-mobile.jpg");
+
+  @media screen and (min-width: 35em) {
+    background-position: center center;
+    background-image: url("/assets/technology/background-technology-tablet.jpg");
+  }
+
+  @media screen and (min-width: 45em) {
+    background-image: url("/assets/technology/background-technology-desktop.jpg");
+  }
+}
+
 // Components
 
 .large-button {
@@ -303,16 +316,14 @@ body {
 }
 
 .numbered-indicators {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--numbered-gap, 2em);
+  // align-items: center;
+  gap: var(--numbered-gap, 1em);
 
   & > * {
     display: grid;
     place-items: center;
 
-    width: 2em;
+    width: 3em;
     aspect-ratio: 1;
 
     border: 1px solid hsl(var(--clr-white) / 0.25);

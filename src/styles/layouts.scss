@@ -25,7 +25,6 @@
 
   .numbered-title {
     grid-area: title;
-    margin-bottom: 2rem;
 
     @media screen and (min-width: 35em) {
       justify-self: start;
@@ -175,9 +174,9 @@
 
     @media screen and (min-width: 45em) {
       grid-template-columns: minmax(2rem, 1fr) minmax(0, 40rem) minmax(0, 20rem) minmax(
-        2rem,
-        1fr
-      );
+          2rem,
+          1fr
+        );
       grid-template-areas:
         " . title title ."
         " . content image ."
@@ -193,6 +192,92 @@
       & > .crew-details {
         align-self: center;
       }
+    }
+  }
+
+  // Technology Page Layout
+
+  &--technology {
+    --flow-space: 2rem;
+
+    @media screen and (min-width: 35em) {
+      --flow-space: 3.5rem;
+    }
+
+    padding-inline: 0;
+    grid-template-columns: 1rem 1fr 1rem;
+
+    grid-template-areas:
+      ". title ."
+      "image image image"
+      ". numbers ."
+      ". content .";
+  }
+
+  & > nav {
+    grid-area: numbers;
+  }
+
+  & > .technology-details {
+    --flow-space: 1rem;
+    grid-area: content;
+
+    margin-top: 1.75rem;
+    @media screen and (min-width: 35em) {
+      margin-top: 2.75rem;
+    }
+
+    h2 {
+      --flow-space: 0.5rem;
+
+      @media screen and (min-width: 35em) {
+        --flow-space: 1rem;
+      }
+
+      @media screen and (min-width: 45em) {
+        --flow-space: 0.75rem;
+      }
+    }
+  }
+
+  & > picture {
+    grid-area: image;
+    justify-self: stretch;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  // Desktop View
+  @media screen and (min-width: 45em) {
+    grid-template-columns:
+      minmax(2rem, 1fr)
+      minmax(0, 10rem)
+      minmax(0, 40rem)
+      minmax(0, 40rem)
+      minmax(2rem, 1fr);
+
+    grid-template-areas:
+      ". title title title ."
+      ". . . image image"
+      ". numbers content image image"
+      ". . . image image";
+
+    justify-content: start;
+
+    & > nav {
+      flex-direction: column;
+      justify-content: center;
+      justify-self: start;
+
+      align-self: start;
+    }
+
+    & > .technology-details {
+      align-self: start;
+      padding-top: 1rem;
     }
   }
 }
